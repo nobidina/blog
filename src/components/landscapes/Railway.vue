@@ -45,12 +45,6 @@ export default {
   height: 8vh;
   border-bottom: 2px solid #a3acb1;
   border-left: 2px solid #3a1c17;
-
-  @media @desktop {
-    top: 65vh;
-    left: 40vw;
-    width: 60vw;
-  }
 }
 
 .train {

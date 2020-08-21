@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Album from '@/components/Album'
+import Album from '@/components/Album';
 import CustomSection from '@/components/CustomSection';
 import FirstScreen from '@/components/FirstScreen';
 import PageFooter from '@/components/PageFooter';
@@ -56,7 +56,7 @@ export default {
         srcSet: '',
         alt: '',
         title: 'Glasgow'
-      },
+      }
     ]
   })
 }
