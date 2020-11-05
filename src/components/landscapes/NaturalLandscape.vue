@@ -1,22 +1,22 @@
 <template>
   <div class="natural-landscape">
     <div class="natural-landscape__sky">
-        <div class="natural-landscape__moon"></div>
-        <div class="natural-landscape__star  natural-landscape__star--1"></div>
-        <div class="natural-landscape__star  natural-landscape__star--2"></div>
-        <div class="natural-landscape__star  natural-landscape__star--3"></div>
-        <div class="natural-landscape__bird  natural-landscape__bird--1"></div>
-        <div class="natural-landscape__bird  natural-landscape__bird--2"></div>
-        <div class="natural-landscape__bird  natural-landscape__bird--3"></div>
-        <div class="natural-landscape__slot">
-          <slot />
-        </div>
+      <div class="natural-landscape__moon"></div>
+      <div class="natural-landscape__star  natural-landscape__star--1"></div>
+      <div class="natural-landscape__star  natural-landscape__star--2"></div>
+      <div class="natural-landscape__star  natural-landscape__star--3"></div>
+      <div class="natural-landscape__bird  natural-landscape__bird--1"></div>
+      <div class="natural-landscape__bird  natural-landscape__bird--2"></div>
+      <div class="natural-landscape__bird  natural-landscape__bird--3"></div>
+      <div class="natural-landscape__slot">
+        <slot />
       </div>
-      <div class="natural-landscape__sea">
-        <div class="natural-landscape__mountain  natural-landscape__mountain--1"></div>
-        <div class="natural-landscape__mountain  natural-landscape__mountain--2"></div>
-        <railway class="natural-landscape__railway" />
-      </div>
+    </div>
+    <div class="natural-landscape__sea">
+      <div class="natural-landscape__mountain  natural-landscape__mountain--1"></div>
+      <div class="natural-landscape__mountain  natural-landscape__mountain--2"></div>
+      <railway class="natural-landscape__railway" />
+    </div>
   </div>
 </template>
 
@@ -38,7 +38,7 @@ export default {
 .natural-landscape {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 98vh;
   overflow: hidden;
   z-index: 1;
 
@@ -63,7 +63,7 @@ export default {
   }
 
   &__sky {
-    height: 80vh;
+    height: 78vh;
     background-color: #00243f;
 
     @media @desktop {

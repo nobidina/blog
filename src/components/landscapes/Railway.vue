@@ -1,8 +1,8 @@
 <template>
-  <div class="railway">
+  <div class="railway"  :class="{ 'railway--reverse': reverse }">
     <div class="train">
       <div class="train__wagon">
-        <div class="train__window"></div>
+        <div class="train__window"  :class="{ 'train__window--1-reverse': reverse }"></div>
         <div class="train__window"></div>
         <div class="train__wheel  train__wheel--1"></div>
         <div class="train__wheel  train__wheel--2"></div>
@@ -31,7 +31,14 @@
 
 <script>
 export default {
-  name: 'Railway'
+  name: 'Railway',
+
+  props: {
+    reverse: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 </script>
 
@@ -108,6 +115,36 @@ export default {
     width: 38%;
     height: 55%;
     background: #2f4c58;
+  }
+}
+
+.railway--reverse {  
+  & .train {
+    animation-direction: reverse;
+  }
+
+  & .train__wagon {
+    &:first-child {
+      border-top-left-radius: 65%;
+    }
+
+    &:last-child {
+      border-top-right-radius: 0;
+    }
+    
+    & .train__window--1 {
+      position: relative;
+      right: 0;
+      width: 38%;
+      border-top-right-radius: 0;
+    }
+
+    & .train__window--1-reverse {
+      position: relative;
+      left: -5%;
+      width: 42%;
+      border-top-left-radius: 65%;
+    }
   }
 }
 

@@ -2,8 +2,8 @@
   <footer class="page-footer">
     <city />
     <div class="page-footer__contacts-wrapper">
-      <social-links class="page-footer__social-links" />
-      <railway class="page-footer__railway" />
+      <contacts class="page-footer__contacts" :contacts="contacts" />
+      <railway class="page-footer__railway" :reverse="reverse" />
     </div>
   </footer>
 </template>
@@ -11,7 +11,7 @@
 <script>
 import City from '@/components/landscapes/City';
 import Railway from '@/components/landscapes/Railway';
-import SocialLinks from '@/components/SocialLinks';
+import Contacts from '@/components/Contacts';
 
 export default {
   name: 'PageFooter',
@@ -19,8 +19,19 @@ export default {
   components: {
     City,
     Railway,
-    SocialLinks
-  }
+    Contacts
+  },
+
+  props: {
+    contacts: {
+      type: Array,
+      required: true
+    }
+  },
+
+  data: () => ({
+    reverse: true
+  })
 }
 </script>
 
@@ -34,12 +45,17 @@ export default {
 
   &__contacts-wrapper {
     position: relative;
+    display: flex;
+    align-items: center;
   }
 
-  &__railways {
-    position: absolute;
-    top: 0;
-    left: 0;
+  &__contacts {
+    margin-right: 45px;
+    margin-left: 45px;
+  }
+
+  &__railway {
+    position: reverse;
   }
 }
 
