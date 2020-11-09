@@ -76,6 +76,12 @@ export default {
         srcSet: EastbourneImg2x,
         alt: 'Eastbourne beach',
         title: 'Eastbourne'
+      },
+      {
+        src: EastbourneImg1x,
+        srcSet: EastbourneImg2x,
+        alt: 'Eastbourne beach',
+        title: 'Eastboussrne'
       }
     ],
     contacts: [

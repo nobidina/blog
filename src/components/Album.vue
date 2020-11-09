@@ -2,14 +2,14 @@
   <div class="album">
 
     <ul class="album__list">
-      <li class="album__item" v-for="item in album" :key="item.title">
+      <li class="album__item" v-for="item in actualAlbum" :key="item.title">
         <img class="album__img" :src="item.img" :srcSet="item.srcSet" :alt="item.alt" width='500' height='auto'>
         <span class="album__item-title">
           {{ item.title }}
         </span>
       </li>
     </ul>
-    <button class="album__button" type="button">
+    <button class="album__button"  type="button" v-if="ifButtonMore" @click="editAlbum">
       More
     </button>
   </div>
@@ -29,6 +29,56 @@ export default {
       type: String,
       default: ''
     }
+  },
+
+  data: function () {
+    return {
+      actualAlbum: this.album
+    }
+  },
+
+  computed: {
+    ifButtonMore() {
+      if (this.album.length > 6 && this.actualAlbum.length != this.album.length) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  },
+
+  methods: {
+    getStartAlbum() {
+     let startAlbum = [];
+      
+      for (let i = 0; i < 6; i++) {
+        startAlbum.push(this.actualAlbum[i]);
+      } 
+
+      return startAlbum;
+    },
+
+    editAlbum() {
+      let actualAlbumLength = this.actualAlbum.length;
+      let albumLength = this.album.length;
+      let step = 3;
+
+      if (actualAlbumLength == albumLength) {
+        return this.actualAlbum;
+      } else {
+        for (let i = actualAlbumLength; i < actualAlbumLength + step; i++) {
+          if (i == albumLength) {
+            break;
+          } else {
+            this.actualAlbum.push(this.album[i]);
+          }
+        }
+      }
+    }
+  },
+
+  created() {
+    this.actualAlbum = this.getStartAlbum()
   }
 }
 </script>
@@ -43,7 +93,6 @@ export default {
 
   &__list {
     width: 100%;
-    margin-bottom: 30px;
 
     @media @tablet {
       display: grid;
@@ -52,7 +101,6 @@ export default {
       grid-gap: 8vh 2vw;
       place-items: start center;
       width: 100%;
-      margin-bottom: 10vh;
     }
   }
 
@@ -118,6 +166,7 @@ export default {
   &__button {
     transition: transform 0.2s;
     width: 100%;
+    margin-top: 30px;
     padding: 10px 5vw;
     border-radius: 3px;
     background-color: #ac9676;
@@ -130,6 +179,7 @@ export default {
 
     @media @tablet {
       width: auto;
+      margin-top: 10vh;
     }
 
     &:hover {
