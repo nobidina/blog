@@ -1,6 +1,11 @@
 <template>
   <footer class="page-footer">
-    <city />
+    <div class="page-footer__text-wrapper">
+      <p class="page-footer__text">
+        If you want to know me better feel free to follow me in social media. I'd happy to meet you.
+      </p>
+      <city class="page-footer__city" />
+    </div>
     <div class="page-footer__contacts-wrapper">
       <contacts class="page-footer__contacts" :contacts="contacts" />
       <railway class="page-footer__railway" :reverse="reverse" />
@@ -40,22 +45,62 @@ export default {
 @import "../less/mixins.less";
 
 .page-footer {
-  .container();
   overflow: hidden;
+  padding-top: 0;
 
-  &__contacts-wrapper {
-    position: relative;
+  @media @tablet {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+  }
+
+  @media @desktop {
+    padding-top: 0;
+  }
+
+  &__text-wrapper {
+    .container();
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
 
-  &__contacts {
-    margin-right: 45px;
-    margin-left: 45px;
+  &__text {
+    font-size: 1.5em;
+    line-height: 1.5em;
+
+    @media @tablet {
+      margin-right: 5vw;
+      font-size: 2em;
+    }
+  }
+
+  &__city {
+    display: none;
+
+    @media @tablet {
+      display: flex;
+    }
+  }
+
+  &__contacts-wrapper {
+    .container();
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
   }
 
   &__railway {
-    position: reverse;
+    position: absolute;
+    right: 0;
+    width: calc(100vw - 15vw - 85px);
+
+    @media @tablet {
+      width: calc(100vw - 14vw - 100px);
+    }
   }
 }
 

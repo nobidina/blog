@@ -60,7 +60,11 @@ export default {
   display: inline-flex;
   flex-direction: row;
   justify-content: space-between;
-  animation: train 6s cubic-bezier(.38,.54,.79,.64) infinite;
+  animation: train 4s cubic-bezier(.38,.54,.79,.64) infinite;
+
+  @media @tablet {
+    animation-duration: 6s;
+  }
 
   &__wagon {
     position: relative;
@@ -88,18 +92,28 @@ export default {
 
   &__wheel {
     position: absolute;
-    bottom: -1vh;
-    width: 1vw;
-    height: 1vw;
+    bottom: -1vw;
+    width: 2vw;
+    height: 2vw;
     border-radius: 50%;
     background: #9b9183;
+
+    @media @tablet {
+      bottom: -0.5vw;
+      width: 1vw;
+      height: 1vw;
+    }
 
     &--1 {
       left: 0.2vw;
     }
 
     &--2 {
-      left: 1.3vw;
+      left: 2.3vw;
+
+      @media @tablet {
+        left: 1.3vw;
+      }
     }
 
     &--3 {
@@ -107,7 +121,11 @@ export default {
     }
 
     &--4 {
-      right: 1.3vw;
+      right: 2.3vw;
+
+      @media @tablet {
+        right: 1.3vw;
+      }
     }
   }
 
@@ -120,7 +138,12 @@ export default {
 
 .railway--reverse {  
   & .train {
+    animation: train-reverse 4s cubic-bezier(.38,.54,.79,.64) infinite;
     animation-direction: reverse;
+
+    @media @tablet {
+      animation-duration: 6s;
+    }
   }
 
   & .train__wagon {
@@ -150,10 +173,19 @@ export default {
 
 @keyframes train {
   0% {
-    left: -100%;
+    left: -120%;
   }
   100% {
     left: 150%;
+  }
+}
+
+@keyframes train-reverse {
+  0% {
+    left: -180%;
+  }
+  100% {
+    left: 120%;
   }
 }
 

@@ -23,5 +23,6 @@ html, body {
   font-size: 16px;
   line-height: 1.5em;
   color: @font-color;
+  background-color: #eae7e0;
 }
 </style>

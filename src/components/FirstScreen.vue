@@ -31,6 +31,8 @@ export default {
 @import "../less/variables.less";
 
 .first-screen {
+  margin-bottom: 10vh;
+
   &__title {
     padding-left: 15px;
     font-size: 4vh;

@@ -39,19 +39,11 @@ export default {
 .album {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-
-  &__title {
-    align-self: flex-start;
-    margin-bottom: 10vh;
-    font-size: 5vh;
-    line-height: 1em;
-    color: #2f4c58;
-  }
 
   &__list {
     width: 100%;
+    margin-bottom: 30px;
 
     @media @tablet {
       display: grid;
@@ -66,13 +58,14 @@ export default {
 
   &__item {
     position: relative;
-    width: 85%;
     margin-bottom: 30px;
     border-radius: 7px;
     border: 5px solid #ac9676;
     line-height: 0;
+    transition: transform 0.2s;
 
     @media @tablet {
+      width: 85%;
       margin-bottom: 0;
     }
 
@@ -80,12 +73,26 @@ export default {
       margin-bottom: 0;
     }
 
+    &:hover {
+      @media @tablet {
+        transform: scale(1.05) rotateZ(1deg);
+      }
+    }
+
     &:nth-child(3n + 1) {
-      transform: rotateZ(0deg);
+      &:hover {
+        @media @tablet {
+          transform: scale(1.05) rotateZ(-1deg);
+        }
+      }
     }
 
     &:nth-child(3n + 3) {
-      transform: rotateZ(0deg);
+      &:hover {
+        @media @tablet {
+          transform: scale(1.05) rotateZ(1deg);
+        }
+      }
     }
   }
 
@@ -109,6 +116,8 @@ export default {
   }
 
   &__button {
+    transition: transform 0.2s;
+    width: 100%;
     padding: 10px 5vw;
     border-radius: 3px;
     background-color: #ac9676;
@@ -118,6 +127,16 @@ export default {
     font-size: 16px;
     line-height: 1.5em;
     color: @white;
+
+    @media @tablet {
+      width: auto;
+    }
+
+    &:hover {
+      @media @tablet {
+        transform: scale(1.05) rotateZ(-1deg);
+      }
+    }
   }
 }
 

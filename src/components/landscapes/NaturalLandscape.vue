@@ -289,9 +289,9 @@ export default {
     width: 75vw;
     
     @media @desktop {
-      top: 65vh;
-      left: 40vw;
-      width: 60vw;
+      top: 80vh;
+      left: 20vw;
+      width: 80vw;
     }
   }
 }
