@@ -82,7 +82,6 @@ export default {
 
     @media @tablet {
       display: flex;
-      width: 25vw;
     }
   }
 

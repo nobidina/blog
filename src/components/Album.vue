@@ -9,7 +9,7 @@
         </span>
       </li>
     </ul>
-    <button class="album__button"  type="button" v-if="ifButtonMore" @click="editAlbum">
+    <button class="album__button"  type="button" v-if="isButtonMore" @click="showMoreItems">
       More
     </button>
   </div>
@@ -33,13 +33,15 @@ export default {
 
   data: function () {
     return {
-      actualAlbum: this.album
+      actualAlbum: this.album,
+      firstStep: 6,
+      step: 3
     }
   },
 
   computed: {
-    ifButtonMore() { // -> isButtonMore
-      if (this.album.length > 6 && this.actualAlbum.length != this.album.length) {
+    isButtonMore() {
+      if (this.album.length > this.firstStep && this.actualAlbum.length != this.album.length) {
         return true;
       } else {
         return false;
@@ -49,25 +51,18 @@ export default {
 
   methods: {
     getStartAlbum() {
-     let startAlbum = [];
-      
-      for (let i = 0; i < 6; i++) {
-        startAlbum.push(this.actualAlbum[i]);
-      } 
-
-      return startAlbum; // можно сделать через .slice()
+     return this.actualAlbum.slice(0, this.firstStep);
     },
 
-    editAlbum() { // лучше назвать как-нибудь по-другому, например, showMore, onMoreButtonClick, etc.
-      let actualAlbumLength = this.actualAlbum.length; // можно const использовать
-      let albumLength = this.album.length;
-      let step = 3;
+    showMoreItems() {
+      const actualAlbumLength = this.actualAlbum.length;
+      const albumLength = this.album.length;
 
-      if (actualAlbumLength == albumLength) { // лучше строгое сравнение
+      if (actualAlbumLength === albumLength) {
         return this.actualAlbum;
       } else {
-        for (let i = actualAlbumLength; i < actualAlbumLength + step; i++) { // наверное, можно сделать через .slice+.concat
-          if (i == albumLength) { // лучше строгое сравнение
+        for (let i = actualAlbumLength; i < actualAlbumLength + this.step; i++) {
+          if (i === albumLength) {
             break;
           } else {
             this.actualAlbum.push(this.album[i]);
