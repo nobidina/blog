@@ -95,7 +95,7 @@ export default {
     background-color: #a3acb1;
 
     &:last-child {
-      margin-bottom: none;
+      margin-bottom: 0;
     }
 
     &::before {

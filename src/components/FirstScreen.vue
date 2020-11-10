@@ -34,10 +34,14 @@ export default {
   margin-bottom: 10vh;
 
   &__title {
-    padding-left: 15px;
-    font-size: 4vh;
-    line-height: 1em;
+    padding-right: 30px;
+    font-size: 1.5em;
+    line-height: 1.5em;
     color: #eae7e0;
+
+    @media @tablet {
+      font-size: 4vh;
+    }
 
     @media @desktop {
       font-size: 5vh;

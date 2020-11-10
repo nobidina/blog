@@ -63,12 +63,12 @@ export default {
   &__text-wrapper {
     .container();
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
   }
 
   &__text {
-    font-size: 1.5em;
+    font-size: 1em;
     line-height: 1.5em;
 
     @media @tablet {
@@ -82,6 +82,7 @@ export default {
 
     @media @tablet {
       display: flex;
+      width: 25vw;
     }
   }
 
@@ -91,15 +92,24 @@ export default {
     display: flex;
     align-items: center;
     width: 100%;
+    min-height: 50px;
+
+    @media @tablet {
+      min-height: 75px;
+    }
   }
 
   &__railway {
     position: absolute;
     right: 0;
-    width: calc(100vw - 15vw - 85px);
+    width: calc(100vw - 7vw - 110px);
 
     @media @tablet {
-      width: calc(100vw - 14vw - 100px);
+      width: calc(100vw - 5vw - 140px);
+    }
+
+    @media @desktop {
+      width: calc(100vw - 10vw - 150px);
     }
   }
 }

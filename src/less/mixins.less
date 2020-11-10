@@ -1,12 +1,12 @@
 .container() {
   min-width: 100%;
   box-sizing: border-box;
-  margin-bottom: 5vh;
+  margin-bottom: 10vh;
   padding-right: 7vw;
   padding-left: 7vw;
 
   &:last-child {
-    margin-bottom: 10vh;
+    margin-bottom: 15vh;
 
     @media @tablet {
       margin-bottom: 20vh;
@@ -14,13 +14,16 @@
   }
 
   @media @tablet {
-    margin-bottom: 10vh;
     padding-right: 5vw;
     padding-left: 5vw;
   }
 
   @media @desktop {
-    max-width: 1500px;
+    min-width: auto;
+    width: 100%;
+    max-width: 3840px;
+    margin-right: auto;
+    margin-left: auto;
     padding-right: 10vw;
     padding-left: 10vw;
   }

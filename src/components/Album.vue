@@ -38,7 +38,7 @@ export default {
   },
 
   computed: {
-    ifButtonMore() {
+    ifButtonMore() { // -> isButtonMore
       if (this.album.length > 6 && this.actualAlbum.length != this.album.length) {
         return true;
       } else {
@@ -55,19 +55,19 @@ export default {
         startAlbum.push(this.actualAlbum[i]);
       } 
 
-      return startAlbum;
+      return startAlbum; // можно сделать через .slice()
     },
 
-    editAlbum() {
-      let actualAlbumLength = this.actualAlbum.length;
+    editAlbum() { // лучше назвать как-нибудь по-другому, например, showMore, onMoreButtonClick, etc.
+      let actualAlbumLength = this.actualAlbum.length; // можно const использовать
       let albumLength = this.album.length;
       let step = 3;
 
-      if (actualAlbumLength == albumLength) {
+      if (actualAlbumLength == albumLength) { // лучше строгое сравнение
         return this.actualAlbum;
       } else {
-        for (let i = actualAlbumLength; i < actualAlbumLength + step; i++) {
-          if (i == albumLength) {
+        for (let i = actualAlbumLength; i < actualAlbumLength + step; i++) { // наверное, можно сделать через .slice+.concat
+          if (i == albumLength) { // лучше строгое сравнение
             break;
           } else {
             this.actualAlbum.push(this.album[i]);
@@ -165,9 +165,10 @@ export default {
 
   &__button {
     transition: transform 0.2s;
+    min-width: 200px;
     width: 100%;
-    margin-top: 30px;
-    padding: 10px 5vw;
+    margin-top: 5vh;
+    padding: 1.3vh 5vw;
     border-radius: 3px;
     background-color: #ac9676;
     font-family: @font-family-main;
@@ -179,7 +180,7 @@ export default {
 
     @media @tablet {
       width: auto;
-      margin-top: 10vh;
+      margin-top: 7vh;
     }
 
     &:hover {

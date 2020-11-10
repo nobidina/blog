@@ -45,13 +45,13 @@ export default {
   &__slot {
     position: absolute;
     top: 43vh;
-    left: 25vw;
+    left: 30vw;
     z-index: 2;
     max-width: 70vw;
 
     @media @tablet {
       top: auto;
-      bottom: 55vh;
+      bottom: 50vh;
     }
 
     @media @desktop {
@@ -227,7 +227,7 @@ export default {
 
   &__mountain {
     position: absolute;
-    bottom: -1px;
+    bottom: -5px;
     display: inline-block;
 
     &--1 {
@@ -285,12 +285,11 @@ export default {
   &__railway {
     position: absolute;
     top: 75vh;
-    left: 25vw;
+    right: 0;
     width: 75vw;
     
-    @media @desktop {
+    @media @tablet {
       top: 80vh;
-      left: 20vw;
       width: 80vw;
     }
   }
