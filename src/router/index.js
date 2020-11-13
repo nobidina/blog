@@ -1,6 +1,7 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import ArticlePage from '../views/ArticlePage.vue';
+import Home from '../views/Home.vue';
 
 Vue.use(VueRouter)
 
@@ -9,6 +10,13 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Home',
     component: Home
+  },
+
+  {
+    path: '/article/:id',
+    name: 'ArticlePage',
+    component: ArticlePage,
+    props: true
   }
 ]
 

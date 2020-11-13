@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import City from '@/components/landscapes/City';
-import Railway from '@/components/landscapes/Railway';
+import City from '@/components/drawings/City';
+import Railway from '@/components/drawings/Railway';
 import Contacts from '@/components/Contacts';
 
 export default {

@@ -13,7 +13,9 @@
       <div class="house__body">
         <div class="house__window"></div>
         <div class="house__window"></div>
-        <div class="house__door"></div>
+        <div class="house__door">
+          <div class="house__handle"></div>
+        </div>
       </div>
     </div>
     <div class="house  house--thin">
@@ -21,7 +23,9 @@
       <div class="house__body">
         <div class="house__window"></div>
         <div class="house__window"></div>
-        <div class="house__door"></div>
+        <div class="house__door">
+          <div class="house__handle"></div>
+        </div>
       </div>
     </div>
     <div class="tree">
@@ -83,7 +87,8 @@ export default {
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    background-color: #fff;
+    //background-color: #fff;
+    background-color: #eae7e0;
   }
 
   &__window {
@@ -91,8 +96,8 @@ export default {
     width: 30px;
     height: 30px;
     margin-bottom: 10px;
-    border: 1px solid #ffffff;
-    background-color: #a3acb1;
+    //background-color: #a3acb1;
+    background-color: #2f4c58;
 
     &:last-child {
       margin-bottom: 0;
@@ -126,7 +131,18 @@ export default {
     right: -5px;
     width: 20px;
     height: 30px;
-    background-color: #a3acb1;
+    //background-color: #a3acb1;
+    background-color: #2f4c58;
+  }
+
+  &__handle {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: #fcf3b5;
   }
 
   &--thin {

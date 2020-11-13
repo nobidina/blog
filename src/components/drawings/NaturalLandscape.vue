@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import Railway from '@/components/landscapes/Railway';
+import Railway from '@/components/drawings/Railway';
 
 export default {
   name: 'NaturalLandscape',
@@ -233,13 +233,15 @@ export default {
     &--1 {
       left: -35vw;
       border-right: 50vw solid transparent;
-      border-bottom: 53vh solid #eae7e0;
+      //border-bottom: 53vh solid #eae7e0;
+      border-bottom: 53vh solid #fff;
       border-left: 50vw solid transparent;
 
       @media @desktop {
         left: -12vw;
         border-right: 20vw solid transparent;
-        border-bottom: 53vh solid #eae7e0;
+        //border-bottom: 53vh solid #eae7e0;
+        border-bottom: 53vh solid #fff;
         border-left: 20vw solid transparent;
       }
 
@@ -262,7 +264,8 @@ export default {
       @media @desktop {
         left: 6vw;
         border-right: 25vw solid transparent;
-        border-bottom: 67vh solid #eae7e0;
+        //border-bottom: 67vh solid #eae7e0;
+        border-bottom: 67vh solid #fff;
         border-left: 25vw solid transparent;
       }
 

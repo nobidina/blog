@@ -1,15 +1,15 @@
 <template>
-  <div class="album">
+  <div class="articles-list">
 
-    <ul class="album__list">
-      <li class="album__item" v-for="item in actualAlbum" :key="item.title">
-        <img class="album__img" :src="item.img" :srcSet="item.srcSet" :alt="item.alt" width='500' height='auto'>
-        <span class="album__item-title">
+    <ul class="articles-list__list">
+      <li class="articles-list__item" v-for="item in actualList" :key="item.title" @click="$router.push({ path: `/article/${item.id}` })">
+        <img class="articles-list__img" :src="item.img" :srcSet="item.srcSet" :alt="item.alt" width='500' height='auto'>
+        <span class="articles-list__item-title">
           {{ item.title }}
         </span>
       </li>
     </ul>
-    <button class="album__button"  type="button" v-if="isButtonMore" @click="showMoreItems">
+    <button class="articles-list__button"  type="button" v-if="isButtonMore" @click="showMoreItems">
       More
     </button>
   </div>
@@ -17,10 +17,10 @@
 
 <script>
 export default {
-  name: 'Album',
+  name: 'ArticlesList',
 
   props: {
-    album: {
+    list: {
       type: Array,
       required: true
     },
@@ -33,7 +33,7 @@ export default {
 
   data: function () {
     return {
-      actualAlbum: this.album,
+      actualList: this.list,
       firstStep: 6,
       step: 3
     }
@@ -41,7 +41,7 @@ export default {
 
   computed: {
     isButtonMore() {
-      if (this.album.length > this.firstStep && this.actualAlbum.length != this.album.length) {
+      if (this.list.length > this.firstStep && this.actualList.length != this.list.length) {
         return true;
       } else {
         return false;
@@ -50,22 +50,22 @@ export default {
   },
 
   methods: {
-    getStartAlbum() {
-     return this.actualAlbum.slice(0, this.firstStep);
+    getStartList() {
+     return this.actualList.slice(0, this.firstStep);
     },
 
     showMoreItems() {
-      const actualAlbumLength = this.actualAlbum.length;
-      const albumLength = this.album.length;
+      const actualListLength = this.actualList.length;
+      const listLength = this.list.length;
 
-      if (actualAlbumLength === albumLength) {
-        return this.actualAlbum;
+      if (actualListLength === listLength) {
+        return this.actualList;
       } else {
-        for (let i = actualAlbumLength; i < actualAlbumLength + this.step; i++) {
-          if (i === albumLength) {
+        for (let i = actualListLength; i < actualListLength + this.step; i++) {
+          if (i === listLength) {
             break;
           } else {
-            this.actualAlbum.push(this.album[i]);
+            this.actualList.push(this.list[i]);
           }
         }
       }
@@ -73,15 +73,17 @@ export default {
   },
 
   created() {
-    this.actualAlbum = this.getStartAlbum()
+    this.actualList = this.getStartList()
   }
 }
 </script>
 
 <style scoped lang="less">
 @import "../less/variables.less";
+@import "../less/mixins.less";
 
-.album {
+.articles-list {
+  .container();
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,10 +102,12 @@ export default {
   }
 
   &__item {
+    cursor: pointer;
+    overflow: hidden;
     position: relative;
     margin-bottom: 30px;
     border-radius: 7px;
-    border: 5px solid #ac9676;
+    border: 4px solid #ac9676;
     line-height: 0;
     transition: transform 0.2s;
 
@@ -147,15 +151,14 @@ export default {
   &__item-title {
     position: absolute;
     bottom: 15%;
-    right: 0;
+    right: 4px;
     display: flex;
     max-width: 60%;
     padding: 2px 7px;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    border-radius: 5px;
     line-height: 1.5em;
-    color: @white;
     background-color: #ac9676;
+    color: #fff;
   }
 
   &__button {

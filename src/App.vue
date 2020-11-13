@@ -1,8 +1,34 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
+    <page-footer :contacts="contacts"/>
   </div>
 </template>
+
+<script>
+  import PageFooter from '@/components/PageFooter';
+
+  export default {
+    name: 'app',
+
+    components: {
+      PageFooter
+    },
+
+    data: () => ({
+      contacts: [
+        {
+          link: "https://www.facebook.com/profile.php?id=100000435645436",
+          icon: "facebook"
+        },
+        {
+          link: "https://www.instagram.com/nadezda_obidina/",
+          icon: "instagram"
+        }
+      ]
+    })
+  }
+</script>
 
 <style lang="less">
 
@@ -23,6 +49,6 @@ html, body {
   font-size: 16px;
   line-height: 1.5em;
   color: @font-color;
-  background-color: #eae7e0;
+  background-color: #fff;
 }
 </style>

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import NaturalLandscape from '@/components/landscapes/NaturalLandscape';
+import NaturalLandscape from '@/components/drawings/NaturalLandscape';
 
 export default {
   name: 'FirstScreen',

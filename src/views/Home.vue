@@ -1,18 +1,13 @@
 <template>
   <main class="home">
     <first-screen :title="mainTitle" />
-    <custom-section>
-      <album :album="album" :title="albumTitle" />
-    </custom-section>
-    <page-footer :contacts="contacts" />
+    <articles-list :list="album" :title="albumTitle" />
   </main>
 </template>
 
 <script>
-import Album from '@/components/Album';
-import CustomSection from '@/components/CustomSection';
+import ArticlesList from '@/components/ArticlesList';
 import FirstScreen from '@/components/FirstScreen';
-import PageFooter from '@/components/PageFooter';
 
 import LondonImg1x from './img/london@1x.jpg';
 import LondonImg2x from './img/london@2x.jpg';
@@ -31,10 +26,8 @@ export default {
   name: 'Home',
   
   components: {
-    Album,
-    CustomSection,
-    FirstScreen,
-    PageFooter
+    ArticlesList,
+    FirstScreen
   },
 
   data: () => ({
@@ -42,56 +35,53 @@ export default {
     albumTitle: 'My advantures',
     album: [
       {
+        id: 1,
         src: BrightonImg1x,
         srcSet: BrightonImg2x,
         alt: 'Brighton West Pier',
         title: 'Brighton'
       },
       {
+        id: 2,
         src: LondonImg1x,
         srcSet: LondonImg2x,
         alt: 'Greenwich hill view',
         title: 'London'
       },
       {
+        id: 3,
         src: DoverImg1x,
         srcSet: DoverImg2x,
         alt: 'White Cliffs of Dover',
         title: 'Dover'
       },
       {
+        id: 4,
         src: GlasgowImg1x,
         srcSet: GlasgowImg2x,
         alt: 'Streets of Glasgow',
         title: 'Glasgow'
       },
       {
+        id: 5,
         src: EdinburghImg1x,
         srcSet: EdinburghImg2x,
         alt: 'Streets of Edinburgh',
         title: 'Edinburgh'
       },
       {
+        id: 6,
         src: EastbourneImg1x,
         srcSet: EastbourneImg2x,
         alt: 'Eastbourne beach',
         title: 'Eastbourne'
       },
       {
+        id: 7,
         src: EastbourneImg1x,
         srcSet: EastbourneImg2x,
         alt: 'Eastbourne beach',
         title: 'Eastboussrne'
-      }
-    ],
-    contacts: [
-      {
-        link: "https://www.facebook.com/profile.php?id=100000435645436",
-        icon: "facebook"
-      },
-      {
-        link: "https://www.instagram.com/nadezda_obidina/",
-        icon: "instagram"
       }
     ]
   })
