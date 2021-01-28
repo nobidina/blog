@@ -32,7 +32,11 @@ export default {
       const cityId = this.$route.params.id;
 
       for (let item of blogArticles) {
-        return item.id === cityId ? item : undefined; 
+        if (item.id === cityId) {
+          return item;
+        } else {
+          continue;
+        }
       }
     }
   }

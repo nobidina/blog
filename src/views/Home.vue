@@ -21,6 +21,8 @@ import GlasgowImg1x from './img/glasgow@1x.jpg';
 import GlasgowImg2x from './img/glasgow@2x.jpg';
 import EastbourneImg1x from './img/eastbourne@1x.jpg';
 import EastbourneImg2x from './img/eastbourne@2x.jpg';
+import OxfordImg1x from './img/oxford@1x.jpg';
+import OxfordImg2x from './img/oxford@2x.jpg';
 
 export default {
   name: 'Home',
@@ -78,10 +80,10 @@ export default {
       },
       {
         id: 7,
-        src: EastbourneImg1x,
-        srcSet: EastbourneImg2x,
-        alt: 'Eastbourne beach',
-        title: 'Eastboussrne'
+        src: OxfordImg1x,
+        srcSet: OxfordImg2x,
+        alt: 'Streets of Oxford',
+        title: 'Oxford'
       }
     ]
   })

@@ -112,8 +112,12 @@ export default {
     transition: transform 0.2s;
 
     @media @tablet {
-      width: 85%;
+      width: 90%;
       margin-bottom: 0;
+    }
+
+    @media @tablet {
+      width: 85%;
     }
 
     &:last-child {
@@ -151,17 +155,24 @@ export default {
   &__item-title {
     position: absolute;
     bottom: 15%;
-    right: 4px;
+    right: 3vw;
     display: flex;
     max-width: 60%;
-    padding: 2px 7px;
+    padding: 2px 2vw;
     border-radius: 5px;
     line-height: 1.5em;
     background-color: #ac9676;
     color: #fff;
+
+    @media @tablet {
+      right: 5px;
+      padding-right: 7px;
+      padding-left: 7px;
+    }
   }
 
   &__button {
+    cursor: pointer;
     transition: transform 0.2s;
     min-width: 200px;
     width: 100%;
@@ -179,6 +190,8 @@ export default {
     @media @tablet {
       width: auto;
       margin-top: 7vh;
+      padding-top: 1vh;
+      padding-bottom: 1vh;
     }
 
     &:hover {

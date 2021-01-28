@@ -87,7 +87,6 @@ export default {
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    //background-color: #fff;
     background-color: #eae7e0;
   }
 
@@ -96,7 +95,6 @@ export default {
     width: 30px;
     height: 30px;
     margin-bottom: 10px;
-    //background-color: #a3acb1;
     background-color: #2f4c58;
 
     &:last-child {
@@ -131,7 +129,6 @@ export default {
     right: -5px;
     width: 20px;
     height: 30px;
-    //background-color: #a3acb1;
     background-color: #2f4c58;
   }
 

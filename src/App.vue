@@ -46,7 +46,7 @@ html, body {
   font-family: @font-family-main;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
+  font-size: 100%;
   line-height: 1.5em;
   color: @font-color;
   background-color: #fff;

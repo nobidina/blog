@@ -28,14 +28,15 @@ export default {
 </script>
 
 <style scoped lang="less">
-@import "../less/variables.less";
-@import "../less/mixins.less";
+@import "../../less/variables.less";
+@import "../../less/mixins.less";
 
 .page-header {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 10vh;
+  margin-bottom: 5vh;
   box-shadow: 0 0 2px 0 #a3acb1;
 }
 

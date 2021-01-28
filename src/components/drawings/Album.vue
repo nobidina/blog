@@ -26,9 +26,9 @@ export default {
 
 .album {
   position: relative;
-  width: 50px;
+  width: 80px;
   height: 60px;
-  margin: 10px;
+  margin: 20px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -81,8 +81,8 @@ export default {
     position: absolute;
     top: 15%;
     left: 15%;
-    width: 20%;
-    height: 20%;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background-color: #f9f6de;
   }
@@ -90,17 +90,18 @@ export default {
   &__mountain {
     position: absolute;
     bottom: 0;
-    border-left: 7px solid transparent;
+    border-left: 11px solid transparent;
     border-bottom: solid #fff;
-    border-right: 7px solid transparent;
+    border-right: 11px solid transparent;
 
     &--small {
       left: -2px;
-      border-bottom-width: 7px;
+      border-bottom-width: 8px;
     }
+
     &--big {
-      left: 7px;
-      border-bottom-width: 10px;
+      left: 12px;
+      border-bottom-width: 12px;
     }
   }
 
