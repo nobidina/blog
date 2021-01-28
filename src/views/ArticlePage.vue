@@ -1,6 +1,6 @@
 <template>
   <main class="article-page">
-    <page-header />
+    <page-header :links="links" />
     <custom-article :article="article" />
   </main>
 </template>
@@ -20,17 +20,27 @@ export default {
   },
 
   data: () => ({
-    article: {}
+    article: {},
+    links: {
+      prevPage: '',
+      nextPage: ''
+    }
   }),
 
   created() {
-    this.article = this.getArticleData();
+    this.article = this.getArticleData(this.$route.params.id);
+    this.links = this.getLinks(this.$route.params.id);
+  },
+
+  watch: {
+    $route(to) {
+      this.article = this.getArticleData(to.params.id);
+      this.links = this.getLinks(to.params.id);
+    }
   },
 
   methods: {
-    getArticleData() {
-      const cityId = this.$route.params.id;
-
+    getArticleData(cityId) {
       for (let item of blogArticles) {
         if (item.id === cityId) {
           return item;
@@ -38,6 +48,18 @@ export default {
           continue;
         }
       }
+    },
+
+    getLinks(cityId) {
+      cityId = + cityId;
+      const prefix = '/article/';
+      const nextPage = cityId === blogArticles.length ? '' : `${prefix}${cityId + 1}`;
+      const prevPage = cityId === 1 ? '' : `${prefix}${cityId - 1}`;
+
+      return { 
+        prevPage, 
+        nextPage,
+      };
     }
   }
 }

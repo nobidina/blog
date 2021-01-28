@@ -5,7 +5,6 @@
         If you want to know me better feel free to follow me in social media. I'd happy to meet you.
       </p>
       <city class="page-footer__city" />
-
     </div>
     <div class="page-footer__contacts-wrapper">
       <contacts class="page-footer__contacts" :contacts="contacts" />
@@ -73,11 +72,16 @@ export default {
     line-height: 1.5em;
 
     @media @tablet {
-      margin-right: 5vw;
+      order: 1;
+      margin-left: 5vw;
+      margin-right: 0;
     }
 
     @media @desktop {
       font-size: 4vh;
+      order: 0;
+      margin-left: 0;
+      margin-right: 5vw;
     }
   }
 
@@ -85,7 +89,12 @@ export default {
     display: none;
 
     @media @tablet {
+      order: 0;
       display: flex;
+    }
+
+    @media @desktop {
+      order: 1;
     }
   }
 
