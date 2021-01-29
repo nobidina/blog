@@ -1,21 +1,35 @@
+import brightonPreviewImg1x from '@/views/img/brighton/preview@1x.jpg';
+import brightonPreviewImg2x from '@/views/img/brighton/preview@2x.jpg';
 import brightonImg1 from '@/views/img/brighton/1.jpg';
 import brightonImg2 from '@/views/img/brighton/2.jpg';
 import brightonImg3 from '@/views/img/brighton/3.jpg';
+import londonPreviewImg1x from '@/views/img/london/preview@1x.jpg';
+import londonPreviewImg2x from '@/views/img/london/preview@2x.jpg';
 import londonImg1 from '@/views/img/london/1.jpg';
 import londonImg2 from '@/views/img/london/2.jpg';
 import londonImg3 from '@/views/img/london/3.jpg';
+import doverPreviewImg1x from '@/views/img/dover/preview@1x.jpg';
+import doverPreviewImg2x from '@/views/img/dover/preview@2x.jpg';
 import doverImg1 from '@/views/img/dover/1.jpg';
 import doverImg2 from '@/views/img/dover/2.jpg';
 import doverImg3 from '@/views/img/dover/3.jpg';
+import glasgowPreviewImg1x from '@/views/img/glasgow/preview@1x.jpg';
+import glasgowPreviewImg2x from '@/views/img/glasgow/preview@2x.jpg';
 import glasgowImg1 from '@/views/img/glasgow/1.jpg';
 import glasgowImg2 from '@/views/img/glasgow/2.jpg';
 import glasgowImg3 from '@/views/img/glasgow/3.jpg';
+import edinburghPreviewImg1x from '@/views/img/edinburgh/preview@1x.jpg';
+import edinburghPreviewImg2x from '@/views/img/edinburgh/preview@2x.jpg';
 import edinburghImg1 from '@/views/img/edinburgh/1.jpg';
 import edinburghImg2 from '@/views/img/edinburgh/2.jpg';
 import edinburghImg3 from '@/views/img/edinburgh/3.jpg';
+import eastbournePreviewImg1x from '@/views/img/eastbourne/preview@1x.jpg';
+import eastbournePreviewImg2x from '@/views/img/eastbourne/preview@2x.jpg';
 import eastbourneImg1 from '@/views/img/eastbourne/1.jpg';
 import eastbourneImg2 from '@/views/img/eastbourne/2.jpg';
 import eastbourneImg3 from '@/views/img/eastbourne/3.jpg';
+import oxfordPreviewImg1x from '@/views/img/oxford/preview@1x.jpg';
+import oxfordPreviewImg2x from '@/views/img/oxford/preview@2x.jpg';
 import oxfordImg1 from '@/views/img/oxford/1.jpg';
 import oxfordImg2 from '@/views/img/oxford/2.jpg';
 import oxfordImg3 from '@/views/img/oxford/3.jpg';
@@ -25,6 +39,11 @@ const blogArticles = [
 		id: '1',
 		title: 'Brighton',
 		introText: 'Brighton (/ˈbraɪtən/) is a constituent part of the city of Brighton and Hove, a former town situated on the southern coast of England, in the county of East Sussex. It is best known as a seaside resort and is positioned 47 miles (76 km) south of London. It was created from the neighbouring but formerly separately governed towns of Brighton and Hove.',
+		previewImg: {
+			src: brightonPreviewImg1x,
+			srcSet: brightonPreviewImg2x,
+			alt: 'Brighton West Pier'
+		},
 		mainImg: {
 			src: brightonImg1,
 			alt: 'Brighton West Pier'
@@ -36,7 +55,12 @@ const blogArticles = [
 		id: '2',
 		title: 'London',
 		introText: 'London is the capital and largest city of England and the United Kingdom. The city stands on the River Thames in the south-east of England, at the head of its 50-mile (80 km) estuary leading to the North Sea.',
-		mainImg: {
+    previewImg: {
+			src: londonPreviewImg1x,
+      srcSet: londonPreviewImg2x,
+      alt: 'Greenwich hill view'
+		},
+    mainImg: {
 			src: londonImg1,
 			alt: 'canary wharf'
 		},
@@ -47,7 +71,12 @@ const blogArticles = [
 		id: '3',
 		title: 'Dover',
 		introText: 'Dover (/ˈdoʊvər/) is a town and major ferry port in Kent, South East England. It faces France across the Strait of Dover, the narrowest part of the English Channel at 33 kilometres (21 mi) from Cap Gris Nez in France. It lies south-east of Canterbury and east of Maidstone. The town is the administrative centre of the Dover District and home of the Port of Dover. The surrounding chalk cliffs are known as the White Cliffs of Dover.',
-		mainImg: {
+    previewImg: {
+			src: doverPreviewImg1x,
+      srcSet: doverPreviewImg2x,
+      alt: 'White Cliffs of Dover'
+		},
+    mainImg: {
 			src: doverImg1,
 			alt: 'white cliffs of dover'
 		},
@@ -58,7 +87,12 @@ const blogArticles = [
 		id: '4',
 		title: 'Glasgow',
 		introText: 'Glasgow is the third most populous city in the United Kingdom, with an estimated city population of 612,040 in 2016. Historically, but now no longer, part of Lanarkshire, the city now forms the Glasgow City council area, one of the 32 council areas of Scotland; the local authority is Glasgow City Council. Glasgow is situated on the River Clyde in the country\'s West Central Lowlands. It is the fifth most visited city in the UK.',
-		mainImg: {
+    previewImg: {
+			src: glasgowPreviewImg1x,
+      srcSet: glasgowPreviewImg2x,
+      alt: 'Streets of Glasgow'
+		},
+    mainImg: {
 			src: glasgowImg1,
 			alt: 'glasgow streets'
 		},
@@ -69,7 +103,12 @@ const blogArticles = [
 		id: '5',
 		title: 'Edinburgh',
 		introText: 'Edinburgh (/ˈɛdɪnbərə/ (About this soundlisten); Scots: Edinburgh; Scottish Gaelic: Dùn Èideann [ˈt̪uːn ˈeːtʲən̪ˠ]) is the capital of Scotland and one of its 32 council areas. Historically part of the county of Midlothian (interchangeably Edinburghshire before 1921), it is located in Lothian on the Firth of Forth\'s southern shore.',
-		mainImg: {
+    previewImg: {
+			src: edinburghPreviewImg1x,
+      srcSet: edinburghPreviewImg2x,
+      alt: 'Streets of Edinburgh'
+		},
+    mainImg: {
 			src: edinburghImg1,
 			alt: 'streets of edinburgh'
 		},
@@ -80,7 +119,12 @@ const blogArticles = [
 		id: '6',
 		title: 'Eastbourne',
 		introText: 'Eastbourne Beach',
-		mainImg: {
+    previewImg: {
+			src: eastbournePreviewImg1x,
+      srcSet: eastbournePreviewImg2x,
+      alt: 'Eastbourne beach'
+		},
+    mainImg: {
 			src: eastbourneImg1,
 			alt: 'Eastbourne (/ˈiːstbɔːrn/ (About this soundlisten)) is a town, seaside resort and borough in the non-metropolitan county of East Sussex on the south coast of England, 19 miles (31 km) east of Brighton. Eastbourne is immediately to the east of Beachy Head, the highest chalk sea cliff in Great Britain and part of the larger Eastbourne Downland Estate.'
 		},
@@ -91,7 +135,12 @@ const blogArticles = [
 		id: '7',
 		title: 'Oxford',
 		introText: 'Oxford (/ˈɒksfərd/) is the county town and only city of Oxfordshire, England. In 2017, its population was recorded at 152,450. It is 56 miles (90 km) northwest of London, 64 miles (103 km) south of Birmingham and 24 miles (39 km) northwest of Reading.',
-		mainImg: {
+    previewImg: {
+			src: oxfordPreviewImg1x,
+      srcSet: oxfordPreviewImg2x,
+      alt: 'Streets of Oxford'
+		},
+    mainImg: {
 			src: oxfordImg1,
 			alt: 'Streets of Oxford'
 		},

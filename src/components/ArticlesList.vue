@@ -1,15 +1,14 @@
 <template>
   <div class="articles-list">
-
     <ul class="articles-list__list">
       <li class="articles-list__item" v-for="item in actualList" :key="item.title" @click="$router.push({ path: `/article/${item.id}` })">
-        <img class="articles-list__img" :src="item.img" :srcSet="item.srcSet" :alt="item.alt" width='500' height='auto'>
+        <img class="articles-list__img" :src="item.previewImg.src" :srcSet="item.previewImg.srcSet" :alt="item.previewImg.alt" width='500' height='auto'>
         <span class="articles-list__item-title">
           {{ item.title }}
         </span>
       </li>
     </ul>
-    <button class="articles-list__button"  type="button" v-if="isButtonMore" @click="showMoreItems">
+    <button class="articles-list__button" type="button" v-if="isButtonMore" @click="showMoreItems">
       More
     </button>
   </div>
@@ -23,11 +22,6 @@ export default {
     list: {
       type: Array,
       required: true
-    },
-
-    title: {
-      type: String,
-      default: ''
     }
   },
 

@@ -12,8 +12,8 @@
       {{ article.date }}
     </span>
     <div class="custom-article__anchor-top" @click="scrollTop">
-      <svg class="custom-article__arrow" xmlns="http://www.w3.org/2000/svg" width="34" height="56" viewBox="0 0 34 56" fill="none">
-        <path d="M12.5 23.9021C12.5 23.9021 -0.0246638 37.5001 6.36694e-06 45.5C0.0246765 53.5 29.7435 58.2546 33 54.5C35.6101 51.3245 26.2339 36.543 23.5 23.9021C23.5 23.9021 29.5031 24.8558 29.5 23.8558C29.4969 22.8558 18.4969 -0.503043 17.5 0.500017C16.5031 1.50308 4.99998 23.8836 7.22127 23.9021C9.44256 23.9206 12.5 23.9021 12.5 23.9021Z" fill="#AC9676"/>
+      <svg class="custom-article__arrow"  xmlns="http://www.w3.org/2000/svg" width="40" height="50" viewBox="0 0 21 28" fill="none">
+        <path d="M8.5 13C8.5 13 0.48503 20.6477 0.499993 25.5C0.514957 30.3523 16.1799 25.7815 19.5 23.5C22.1613 21.5706 18.7672 20.6639 16 13C16 13 20.5019 12.6065 20.5 12C20.4981 11.3935 12.8349 -0.1229 11.8187 0.48677C10.8025 1.09644 2.2386 12.9916 4.5 13C6.7614 13.0084 8.5 13 8.5 13Z" fill="#AC9676"/>
       </svg>
     </div>
   </article>
@@ -39,8 +39,8 @@ export default {
 </script>
 
 <style scoped lang="less">
-@import "../less/variables.less";
-@import "../less/mixins.less";
+@import "../../less/variables.less";
+@import "../../less/mixins.less";
 
 .custom-article {
   .container();
@@ -109,7 +109,6 @@ export default {
 
     @media @desktop {
       height: 65px;
-      bottom: -10px;
       right: 0;
     }
   }
