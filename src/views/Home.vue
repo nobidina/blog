@@ -7,7 +7,6 @@
 
 <script>
 import blogArticles from './data/blogArticles.js';
-
 import ArticlesList from '@/components/ArticlesList';
 import FirstScreen from '@/components/FirstScreen';
 
