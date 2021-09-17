@@ -101,7 +101,7 @@ export default {
     position: relative;
     margin-bottom: 30px;
     border-radius: 7px;
-    border: 4px solid #ac9676;
+    box-shadow: 0 0 0 4px #ac9676;
     line-height: 0;
     transition: transform 0.2s;
 

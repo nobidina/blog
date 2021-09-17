@@ -35,12 +35,6 @@
 @import "less/variables.less";
 @import "less/reset.less";
 
-html, body {
-  margin: 0;
-  height: 100%;
-  min-height: 100%;
-}
-
 #app {
   min-height: 100%;
   font-family: @font-family-main;
